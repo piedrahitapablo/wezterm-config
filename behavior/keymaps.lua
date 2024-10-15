@@ -1,4 +1,5 @@
 local projects = require("menus.projects")
+local utils = require("utils")
 local wezterm = require("wezterm")
 local workspaces = require("menus.workspaces")
 
@@ -18,6 +19,13 @@ function keymaps.setup(config)
             key = "w",
             mods = "SUPER|SHIFT",
             action = wezterm.action.InputSelector(workspaces_input_selector),
+        },
+        {
+            key = "k",
+            mods = "SUPER|SHIFT",
+            action = wezterm.action_callback(function(window)
+                utils.kill_workspace(window:active_workspace())
+            end),
         },
         {
             key = "LeftArrow",
