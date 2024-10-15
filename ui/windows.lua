@@ -1,10 +1,10 @@
 local windows = {}
 
 function windows.setup(config)
-    config.window_background_opacity = 0.95
+    config.window_background_opacity = 0.985
     config.window_padding = {
-        left = 0,
-        right = 0,
+        left = 10,
+        right = 10,
         top = 0,
         bottom = 0,
     }
