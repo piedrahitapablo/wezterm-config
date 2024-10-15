@@ -56,6 +56,11 @@ function keymaps.setup(config)
             mods = "SUPER|SHIFT",
             action = wezterm.action.ActivatePaneDirection("Down"),
         },
+        {
+            key = "w",
+            mods = "SUPER",
+            action = wezterm.action.CloseCurrentPane({ confirm = true }),
+        }
     }
 end
 
