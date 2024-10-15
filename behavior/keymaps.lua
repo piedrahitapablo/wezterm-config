@@ -1,16 +1,23 @@
 local projects = require("menus.projects")
 local wezterm = require("wezterm")
+local workspaces = require("menus.workspaces")
 
 local keymaps = {}
 
 function keymaps.setup(config)
     local projects_input_selector = projects.get_input_selector()
+    local workspaces_input_selector = workspaces.get_input_selector()
 
     config.keys = {
         {
             key = "o",
             mods = "SUPER|SHIFT",
             action = wezterm.action.InputSelector(projects_input_selector),
+        },
+        {
+            key = "w",
+            mods = "SUPER|SHIFT",
+            action = wezterm.action.InputSelector(workspaces_input_selector),
         },
         {
             key = "LeftArrow",
