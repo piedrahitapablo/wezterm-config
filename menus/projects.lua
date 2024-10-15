@@ -43,6 +43,10 @@ end
 
 function projects.get_input_selector()
     return {
+        title = "Project workspaces",
+        fuzzy_description = "Select a project workspace: ",
+        choices = get_project_choices(),
+        fuzzy = true,
         ---@diagnostic disable-next-line: unused-local
         action = wezterm.action_callback(function(window, pane, id, label)
             local workspaces = wezterm.mux.get_workspace_names()
@@ -74,8 +78,6 @@ function projects.get_input_selector()
 
             project_startup(wezterm, label)
         end),
-        title = "Project Workspaces",
-        choices = get_project_choices(),
     }
 end
 
